@@ -37,6 +37,8 @@ local.properties
 
 *.MF
 *.xml
+*.png
+*.ttf
 
 
 
