@@ -39,7 +39,7 @@ local.properties
 *.xml
 *.png
 *.ttf
-
+*.gitignore
 
 
 
