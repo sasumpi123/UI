@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>1. 숫자형 형 변환 number() 함수</h1>
+    <p>문자형의 숫자를 숫자형으로 변환시켜 준다.</p>
+    <input type="text" id="num">
+    <button onclick="numTest(num.value);">확인</button>
+    <script>
+        function numTest(val) {
+            var vals = Number(val) + 5;
+            alert(vals + " : " + typeof(vals));
+        }
+    </script>
+
+
+    <h2>2. 정수형 형 변환 parseInt() 함수</h2>
+    <p>문자형의 숫자를 정수형으로 반환</p>
+    <input type="text" id="int">
+    <button onclick="intTest(int.value);">확인</button>
+    <script>
+        function intTest(val) {
+            var vals = parseInt(val) + 5;
+            alert(vals + " : " + typeof(vals));
+        }
+    </script>
+
+
+    <h2>3. 실수형 형 변환 parseFloat() 함수</h2>
+    <p>문자형의 숫자를 실수형으로 반환</p>
+    <input type="text" id="float">
+    <button onclick="floatTest(float.value)">확인</button>
+    <script>
+        function floatTest(val) {
+            var vals = parseFloat(val) + 5;
+            alert(vals + " : " + typeof(vals));
+        }
+    </script>
+
+    <h2>4. 검증함수</h2>
+    <p>문자열로 된 코드를 자바스크립트로 읽어들여 계산한다.</p>
+    <input type="text" name="evalue" placeholder="예) 5 + 10">
+    <button onclick="evalTest();">계산</button>
+    <span>
+    </span>
+
+    <script>
+        function evalTest() {
+            var val = document.getElementsByName("evalue")[0];
+            if (confirm("작성하신 코드가 맞나요? :" + val.value)) {
+                document.getElementsByTagName("span")[0].innerHTML = "<b>계산결과 : " + eval(val.value) + "</b>";
+            } else {
+                val.placeholder = "다시작성하세요. 예) 5 + 10";
+            }
+        }
+    </script>
+    <hr>
+
+    <h1>숙제</h1>
+
+    <input type="number" name="fvalue">
+    <input type="text" list="mylist">
+    <datalist id="mylist">
+        <option value="+">
+        <option value="-">
+        <option value="*">
+        <option value="/">
+    </datalist>
+    <input type="number" name="tvalue">
+    <button onclick="calc();">계산</button>
+    <span></span>
+
+    <script>
+        function calc() {
+            var val1 = document.getElementsByName("fvalue");
+            var val2 = document.getElementsByName("tvalue");
+            var cal = document.getElementById("mylist");
+
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>
