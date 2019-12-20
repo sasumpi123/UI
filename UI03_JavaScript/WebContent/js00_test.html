@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <h1>구구단</h1>
+    <h3>1. 구구단 전체 출력</h3>
+    <input type="button" value="클릭" onclick="gugudan();">
+    <h3>2. 구구단 선택 출력 </h3>
+    <p>prompt를 사용하여, 입력받은 단만 출력하자</p>
+    <input type="button" value="클릭" onclick="gugu();"><br>
+    <span id="res"></span>
+
+    <script>
+        function gugudan() {
+            for (var i = 1; i <= 9; i++) {
+                for (var j = 1; j <= 9; j++) {
+                    console.log(i + " * " + j + " = " + i * j);
+                    var doc = document.getElementById("res").innerHTML += i + " * " + j + " = " + i * j + "<br>";
+
+                }
+            }
+
+        }
+
+        function gugu() {
+            var num = prompt("구구단의 결과를 보고싶은 숫자를 입력해주세요");
+
+            parseInt(num);
+            for (var i = 1; i < 10; i++) {
+                console.log(num + " * " + i + " = " + num * i);
+                var doc = document.getElementById("res").innerHTML += num + " * " + i + " = " + i * num + "<br>";
+            }
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>
