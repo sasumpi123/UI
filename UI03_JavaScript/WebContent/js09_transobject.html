@@ -65,23 +65,29 @@
 
     <h1>숙제</h1>
 
-    <input type="number" name="fvalue">
+    <input type="number" id="fvalue">
     <input type="text" list="mylist">
+
     <datalist id="mylist">
         <option value="+">
         <option value="-">
         <option value="*">
         <option value="/">
     </datalist>
-    <input type="number" name="tvalue">
+    <input type="number" name="svalue">
+
     <button onclick="calc();">계산</button>
     <span></span>
 
     <script>
         function calc() {
-            var val1 = document.getElementsByName("fvalue");
-            var val2 = document.getElementsByName("tvalue");
             var cal = document.getElementById("mylist");
+
+            var cal2 = document.getElementsByTagName("mylist");
+            console.log(cal2);
+
+            console.log(ca);
+
 
 
 
