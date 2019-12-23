@@ -12,10 +12,12 @@
         function searchQS() {
             // css 선택자
             var doc = document.querySelectorAll("#test");
+            console.log(doc);
             doc[0].innerHTML = "querySelectorAll(css 선택자)";
 
             var doc2 = document.querySelector("#test");
             doc2.style.color = "red";
+            console.log(doc2);
         }
 
         function searchid() {

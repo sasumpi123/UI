@@ -19,7 +19,8 @@
             name: "kh 정보 교육원",
             print: function() {
                 return classQ.name + "!!!!";
-            }
+            },
+            age: 123
         }
 
         myClassQ.prototype.printName = function() {
@@ -34,6 +35,7 @@
 
             console.log(classQ.name);
             console.log(classQ.print());
+            console.log(typeof(classQ.age));
 
             cls.printName();
         }

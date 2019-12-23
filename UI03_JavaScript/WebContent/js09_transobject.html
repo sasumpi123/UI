@@ -80,15 +80,15 @@
 
     <script>
         /*
-                    function calc() {
-                        var doc = document.querySelectorAll(".cal");
-                        var res = "";
-                        for (var i = 0; i < doc.length; i++) {
-                            res += doc[i].value;
-                        }
-                        document.getElementsByTagName("span")[1].innerHTML = eval(res);
-                    }
-                */
+                            function calc() {
+                                var doc = document.querySelectorAll(".cal");
+                                var res = "";
+                                for (var i = 0; i < doc.length; i++) {
+                                    res += doc[i].value;
+                                }
+                                document.getElementsByTagName("span")[1].innerHTML = eval(res);
+                            }
+                        */
 
 
         function calc() {
@@ -98,6 +98,9 @@
             var res = eval(input01.value + opr01.value + input02.value);
 
             document.getElementsByTagName("span")[1].innerHTML = res;
+
+
+
 
         }
     </script>
