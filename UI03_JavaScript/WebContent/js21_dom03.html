@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        img,
+        #imgview {
+            widows: 300px;
+            height: 300px;
+        }
+    </style>
+
+    <script>
+        function createImg() {
+            // 1. 이름이 rdo인 요소들을 가지고 오자.
+            var doc = document.getElementsByName("rdo");
+
+
+            // 2. 가져온 요소들을 반복하여 조회하면서,
+            // 라디오버튼이 체크되어있는짛 확인하고,
+            // 만일 체크되어있다면 해당 요소의 value값을 가지고
+            // 경로를 만들어준다
+            var source = "image/";
+            for (var i = 0; i < doc.length; i++) {
+                if (doc[i].checked) {
+                    source += doc[i].value;
+                }
+            }
+
+
+            // 3. img태그를 생성하고, src 속성을 생성하여
+            // 2번에서 만든 경로를 src속성의 value로 넣어준다
+            var img = document.createElement("img");
+            img.setAttribute("src", source);
+            // document.body.appendChild(img);
+
+
+            // 4. 바꿔준다. parent.replaceChild(new, old); 
+            var div = document.getElementById("imgview");
+            div.replaceChild(img, div.childNodes[0]);
+            console.log(div.childNodes[0] + " : " + img);
+
+        }
+
+        function deleteIng() {
+            document.getElementById("imgview").childNodes[0].setAttribute("src", "");
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <input type="radio" name="rdo" value="img01.png">img01 <br>
+    <input type="radio" name="rdo" value="img02.png">img02 <br>
+    <input type="radio" name="rdo" value="img03.png">img03 <br>
+    <input type="radio" name="rdo" value="img04.png">img04 <br>
+    <input type="radio" name="rdo" value="img05.png">img05 <br>
+    <button onclick="createImg()">이미지 생성</button>
+    <button onclick="deleteIng()">이미지 삭제</button>
+
+    <div id="imgview"><img src=""></div>
+
+</body>
+
+</html>

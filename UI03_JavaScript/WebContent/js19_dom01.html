@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function searchPar() {
+            var child02 = document.getElementsByTagName("p")[1];
+            var parent = child02.parentNode;
+            alert(parent.nodeName);
+            parent.style.backgroundColor = "pink";
+        }
+
+        function searchChi() {
+            var div = document.getElementsByTagName("div");
+            var divChildren = div[0].childNodes;
+            alert(divChildren[5].tagName);
+            divChildren[5].style.backgroundColor = "skyblue";
+            console.log(divChildren[7]);
+        }
+
+        function parentbc() {
+            var childnode = document.getElementsByTagName("p")[3];
+            childnode.parentNode.style.backgroundColor = "skyblue";
+        }
+
+        function childpont() {
+            var parentnd = document.getElementsByTagName("div")[2];
+
+
+            parentnd.childNodes[parentnd.childNodes.length - 2].style = "font-size : 20pt";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>부모탐색, 자식탐색</h1>
+
+    <div>
+        <p>child01</p>
+        <p>child02</p>
+        <p>child03</p>
+
+    </div>
+    <button onclick="searchPar()">부모탐색</button>
+    <button onclick="searchChi()">자식탐색</button>
+
+    <!-- 문제 -->
+    <div>
+        <p>test01</p>
+        <p>test02</p>
+    </div>
+    <div>
+        <p>test03</p>
+        <p>test04</p>
+    </div>
+
+    <!-- parentNode -->
+    <h3>1. "test01 태그를 포함한 부모태그"의 배경색을 적용하기</h3>
+    <button onclick="parentbc()">확인</button>
+    <!-- childNodes -->
+    <h3>2. "마지막 div 태그" 에 포함된 마지막 p태그의 폰트 크기를 20pt 적용</h3>
+    <button onclick="childpont()">확인</button>
+
+</body>
+
+</html>
