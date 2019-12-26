@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(function() {
+            $("#signal").submit(function() {
+                if ($(".infobox").val() == null || $(".infobox").val() == "") {
+                    $(".error").show();
+                    return false;
+                }
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+
+    <form action="" id="signal" method="get">
+        <div>
+            <span class="label">User ID</span>
+            <input type="text" class="infobox" name="userid">
+            <span class="error" hidden="" style="color:red">반드시 입력하세요</span>
+        </div>
+        <input type="submit" class="submit" value="입력">
+    </form>
+    <hr>
+    <fieldset style="width: 300px;">
+        <legend>체크 여부 확인</legend>
+        <input type="checkbox" name="all" onclick="allChk(this.checked)"><b>전체선택</b><br>
+        <input type="checkbox" name="chk" value="20000"><b>java</b><br>
+        <input type="checkbox" name="chk" value="20000"><b>jquery</b><br>
+        <input type="checkbox" name="chk" value="20000"><b>spring</b><br>
+
+        <input type="button" value="확인" id="confirm">
+        <span>선택한 책 가격</span>
+        <div id="result"></div>
+
+    </fieldset>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        function resizeImg() {
+            $("img").css({
+                "height": "200px",
+                "width": "200px"
+            })
+        }
+
+        function idSelector() {
+            $('#selid').hide();
+        }
+
+        function classSelector() {
+            $('.selclass').css("opacity", "50%");
+        }
+
+        function propSelector() {
+            // $()
+            $('img[title*=02]').slideUp(2000);
+        }
+
+        function changeImg() {
+            $('td > img').attr("src", "image/img02.png");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>1. 이미지들의 크기를 모두 200px*200px로 설정하자</h1>
+    <button onclick="resizeImg()">클릭</button>
+    <h1>2. 이미지들중 id가 'selid'인 태그를 찾아 숨기기</h1>
+    <button onclick="idSelector()">클릭</button>
+    <h1>3. 이미지들중 class가 'selclass'인 태그를 찾아 투명도 50% 적용</h1>
+    <button onclick="classSelector()">클릭</button>
+    <h1>
+        4. 이미지들중 속성값으로 탐색하여 slideUp 이름을 적용하기 (title 속성값 중, '02'를 포함하는 img태그를 찾아서 적용) (slideUpdms 2000ms로 적용)
+    </h1>
+    <button onclick="propSelector()">클릭</button>
+    <h1>5. 이미지 바꾸기(td의 자식요소인 img만 선택하여 적용)</h1>
+    <button onclick="changeImg()">클릭</button>
+    <table>
+        <tr>
+            <td><img title="img01" id="selid" src="image/img01.png" alt="test01"></td>
+            <td><img title="img02" src="image/img01.png" alt="test01"></td>
+            <td><img title="img03" class="selclass" src="image/img01.png" alt="test01"></td>
+            <td><img title="img04" class="selclass" src="image/img01.png" alt="test01"></td>
+        </tr>
+        <tr>
+            <td><img title="img05" id="selid" src="image/img01.png" alt="test01"></td>
+            <td><span><img title="img06" src="image/img01.png" alt="test01"></span></td>
+            <td><span><img title="img07" class="selclass" src="image/img01.png" alt="test01"></span></td>
+            <td><img title="img08" class="selclass" src="image/img01.png" alt="test01"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

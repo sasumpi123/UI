@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="js/jquery-3.4.1.js"></script>
+
+    <script>
+        $(Document).ready(function() {
+            $("div:eq(0)").css({
+                "border": "1px solid red",
+                "width": "400px",
+                "height": "200px"
+            })
+            $("#view").css({
+                "border": "1px solid blue",
+                "width": "400px",
+                "height": "100px"
+            })
+        })
+
+        function spanSelector() {
+            $("span").css("color", "red");
+            $("#view").text('$("span").css("color","red");');
+        }
+
+        function idSelector() {
+            jQuery("#t1").css("color", "blue");
+            jQuery('#view').text('jQuery("#t1").css("color","blue");');
+        }
+
+        function classSelector() {
+            $(".t2").css("color", "green");
+            $("#view").text('$(".t2").css("color","green");');
+        }
+
+        function pcSelector() {
+            $("li span").css("color", "yellow");
+            $("#view").text('$("li span").css("color","yellow");');
+        }
+
+        function pgtSelector() {
+            $("b>span").css("color", "aquamarine");
+            $("#view").text('$("b span").css("color","aquamarine");');
+        }
+
+        function ntncSelector() {
+            $("li:nth-child(3)").css("background-color", "pink");
+            $("#view").text('$("li:nth-child(even)").css("background-color", "pink");');
+            // odd 홀수
+            // even 짝수
+            // (숫자) 해당숫자번째
+        }
+
+        function firstcSelector() {
+            $("li:first-child").css("background-color", "gray");
+            $("#view").text('$("li:first-child").css("background-color","gray");');
+        }
+
+        function lastcSelector() {
+            $("li:last-child").css("background-color", "violet");
+            $("#view").text('$("li:last-child").css("background-color","violet");');
+        }
+
+        function cls() {
+            $("*").css("background-color", "white").css("color", "black");
+            $("#view").text('$("*").css("background-color", "white").css("color", "black");');
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>selector 표현식</h1>
+    <div>
+        <ul>
+            <li><span>tag로 선택하기</span></li>
+            <li id="t1">id로 선택하기</li>
+            <li class="t2">class로 선택하기</li>
+            <li><span>parent child로 선택하기</span></li>
+            <li><b><span>parent &gt; child</span></b>로 선택하기</li>
+            <li>: ntn-child(n/odd/even)로 선택하기</li>
+            <li>: first-child로 선택하기</li>
+            <li>: last-child로 선택하기</li>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <button onclick="spanSelector()">태그선택(span)</button>
+        <button onclick="idSelector()">id선택(t1)</button>
+        <button onclick="classSelector()">class선택(t2)</button>
+        <button onclick="pcSelector()">p c 선택</button>
+        <button onclick="pgtSelector()">p &gt; c 선택</button>
+        <button onclick="ntncSelector()">ntn-child 선택</button>
+        <button onclick="firstcSelector()">first-child 선택</button>
+        <button onclick="lastcSelector()">last-child 선택</button>
+        <br>
+        <button onclick="cls()">clear</button>
+    </div>
+
+    <h2>코드내용</h2>
+    <div id="view"></div>
+
+</body>
+
+</html>
