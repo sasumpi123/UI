@@ -80,7 +80,6 @@
                 $("a:eq(1)").unbind();
             })
 
-
             $("button").click(function() {
                 $('body').append("<p>새로 추가된 p태그</p>");
             })
@@ -88,6 +87,7 @@
             $("body").on("click", ">p", function() {
                 alert("새로 추가된 요소도 이벤트 적용");
             })
+
         })
     </script>
 

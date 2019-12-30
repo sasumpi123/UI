@@ -16,6 +16,12 @@
                 // target(변환될 엘리먼트) 앞에온다.
                 $("p").replaceWith("<p><b>replaceWith 메서드</b></p>")
             })
+
+            $("button").eq(1).click(function() {
+                $("p").replaceWith("<p><b>replaceWith 메서드</b></p>")
+            })
+
+
             $("button:last").click(function() {
                 // target 뒤에 온다.
                 $("<p><b>replaceAll 메서드</b></p>").replaceAll("p");
@@ -27,9 +33,10 @@
 <body>
 
     <div>
-        <p>DOM 대체</p>
+        <p>DOM 대채</p>
     </div>
     <button>바꾸기(replaceWith)</button>
+    <button>asdasf</button>
     <button>바꾸기(replaceAll)</button>
 
 </body>
